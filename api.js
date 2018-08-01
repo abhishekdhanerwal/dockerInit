@@ -18,9 +18,9 @@ app.use(function (req, res, next) {
 var token = require('./routes/TokenRoute')(app);
 
   //if(env === 'development'){
-        mongoose.connect('mongodb://127.0.0.1/matka');
+        // mongoose.connect('mongodb://127.0.0.1/matka');
  //  }else {
-  //   mongoose.connect('mongodb://abhishekDhanerwal:Abhi123!@ds257851.mlab.com:57851/matka');
+     mongoose.connect('mongodb://rldfaridabad:kapil_123@ds261521.mlab.com:61521/timetable');
  //}
 
 // var port = process.env.PORT || 8080;mongodb://<dbuser>:<dbpassword>@ds257851.mlab.com:57851/matka

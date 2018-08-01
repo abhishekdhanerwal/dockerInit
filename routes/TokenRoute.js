@@ -33,19 +33,31 @@ module.exports = function(app) {
                     });
                     newToken.save(function (error, result) {
                         if (error){
-                            throw error;
+                           res.status(400).send({message: 'error during saving data', error: error});
                         }                           
                         else {
-                           return res;                           
+                            res.status(200).send({
+                                message: 'Tokens found successfully',
+                                data: result
+                            })                          
                         }
                     })
                 }
                 else {
-
+                    _.merge(response, req.body);
+                    response.save(function (error, result) {
+                        if (error){
+                           res.status(400).send({message: 'error during saving data', error: error});
+                        }                           
+                        else {
+                            res.status(200).send({
+                                message: 'Tokens found successfully',
+                                data: result
+                            })                          
+                        }
+                    })
                 }
             }
         })
-
-        res.send(req.body.status);
     })
 };
